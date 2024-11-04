@@ -1,11 +1,25 @@
-const bouton = document.querySelector("#nightmode")
+const bouton = document.querySelector("#nightmode");
+const choix = localStorage.getItem("choix");
+var element = document.body;
 
-function myFunction() {
-  var element = document.body;
-  element.classList.toggle("dark-mode");
+// Vérifier la préférence au chargement de la page
+if (choix === "1") {
+  element.classList.add("dark-mode"); // Appliquer le mode sombre si le choix est 1
 }
 
-bouton.addEventListener("click", myFunction)
+function myFunction() {
+  element.classList.toggle("dark-mode");
+  
+  // Enregistrer la préférence
+  if (element.classList.contains("dark-mode")) {
+    localStorage.setItem("choix", "1"); // Sombre
+  } else {
+    localStorage.setItem("choix", "0"); // Clair
+  }
+}
+
+// Ajouter l'événement au bouton
+bouton.addEventListener("click", myFunction);
 
 
 
@@ -60,3 +74,4 @@ anime.timeline({loop: true})
     }
   });
 
+//------------------------------------
