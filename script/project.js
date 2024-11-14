@@ -33,14 +33,3 @@ window.addEventListener("scroll", () => {
     console.log("pas scroll")
   }
 });
-
-
-// ---------
-
-const fleche = document.querySelector(".arrow")
-
-function scrollenbas(){
-  window.scrollTo(0, document.body.scrollHeight);
-}
-
-fleche.addEventListener("click", scrollenbas);
